@@ -5,11 +5,11 @@
         <div class="col-md-6 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="mb-0 text-center">Available Balance: {{ Number::currency(auth()->user()->withdraw_balance()) }}
+                    <h3 class="mb-0 text-center">Available Balance: {{ Number::currency(auth()->user()->withdraw_balance(),'MYR' ,'ms_My') }}
                     </h3>
                     <p class="text-center mb-0">This is your available balance, you can withdraw anytime</p>
                     <h6 class="text-center mt-4">Withdraw Fees: {{ auth()->user()->settings('withdraw_fees') }}%</h6>
-                    <h6 class="text-center mt-4">Min Withdraw:  {{ Number::currency(auth()->user()->settings('min_withdraw')) }}</h6>
+                    <h6 class="text-center mt-4">Min Withdraw:  {{ Number::currency(auth()->user()->settings('min_withdraw') ,'MYR' ,'ms_MY') }}</h6>
                 </div>
             </div>
         </div>

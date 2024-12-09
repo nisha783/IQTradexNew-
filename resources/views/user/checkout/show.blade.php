@@ -9,7 +9,7 @@
                         <h4>Deposit Funds</h4>
                     </div>
                     <div class="card-body text-center">
-                        <h5>Send <strong>{{ Number::currency($payment['amount']) }} USDT</strong> to the address below</h5>
+                        <h5>Send <strong>{{ Number::currency($payment['amount'] ,'MYR' ,'ms_MY') }} USDT</strong> to the address below</h5>
                         <p class="mt-3"><strong>Wallet Address:</strong></p>
                         <p class="bg-light p-2 rounded">{{ $payment['address'] }}</p>
 
@@ -27,7 +27,7 @@
                             <h6>Instructions:</h6>
                             <ul class="list-unstyled">
                                 <li>1. Scan the QR code with your wallet app.</li>
-                                <li>2. Ensure the correct amount of <strong>{{ Number::currency($payment['amount']) }}
+                                <li>2. Ensure the correct amount of <strong>{{ Number::currency($payment['amount'],'MYR' ,'ms_MY') }}
                                         USDT</strong> is entered.</li>
                                 <li>3. Confirm the transaction and wait for confirmation.</li>
                                 <li>4. Confirm the transaction and wait for the confirmation.</li>

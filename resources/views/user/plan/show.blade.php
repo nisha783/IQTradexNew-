@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <p class="text-center mb-4">Are you sure you want to activate {{ $plan->name }} plan for ${{ Number::currency($plan->price) }}?</p>
+                    <p class="text-center mb-4">Are you sure you want to activate {{ $plan->name }} plan for ${{ Number::currency($plan->price ,'MYR' ,'ms_MY') }}?</p>
                     <form action="{{ route('user.plans.store') }}" method="POST">
                         @csrf
                         <input type="hidden" name="plan_id" value="{{ $plan->id }}">

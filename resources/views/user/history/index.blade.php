@@ -19,7 +19,7 @@
                             <tr>
                                 <td>{{$transaction->user->username}}</td>
                                 <td><span class="badge bg-primary">{{strtoupper($transaction->type)}}</span></td>
-                                <td>{{Number::currency($transaction->amount)}}</td>
+                                <td>{{Number::currency($transaction->amount ,'MYR' ,'ms_My')}}</td>
                                 <td>{{$transaction->reference}}</td>
                                 <td><span class="badge bg-primary">{{strtoupper($transaction->status)}}</span></td>
                                 <td>{{$transaction->created_at}}</td>
