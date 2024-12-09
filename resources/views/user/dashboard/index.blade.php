@@ -1,15 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@if (!auth()->user()->kyc)
-<div class="row">
-    <div class="col-md-12">
-        <div class="alert bg-light">
-            Complete your KYC & get an instant $10 reward! <a href="{{ route('user.kyc.index') }}"
-                class="alert-link">Verify Now</a>
-        </div>
-    </div>
-</div>
-@endif
+
 {{-- @if (auth()->user()->role == 'admin')
         <div class="row">
             <div class="col-md-6 mx-auto">
@@ -69,12 +60,7 @@
         'value' => auth()->user()->totalCommission(),
         ])
     </div>
-    <div class="col">
-        @include('inc.info-card', [
-        'title' => 'KYC Reward',
-        'value' => auth()->user()->transactions()->where('type', 'kyc bonus')->sum('amount'),
-        ])
-    </div>
+
     <div class="col">
         @include('inc.info-card', [
         'title' => 'Total Investment',
@@ -173,7 +159,7 @@
             </div>
         </div>
     </div>
-  
+
     <div class="col-md-12">
         <div class="card shadow-sm">
             <div class="card-body text-center">
@@ -294,8 +280,9 @@
                                 </span>
                             </td>
                             <td class="fw-bold">
-                                {{ $deposit->sum ? '+' : '-' }}{{ Number::currency($deposit->amount) }}
+                                {{ $deposit->sum ? '+' : '-' }}RM{{ number_format($deposit->amount, 2) }}
                             </td>
+
                             <td>{{ $deposit->created_at->diffForHumans() }}</td>
                         </tr>
                         @endforeach

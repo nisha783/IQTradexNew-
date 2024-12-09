@@ -94,10 +94,11 @@ class UserResource extends Resource
                     Tables\Columns\TextColumn::make('balance')
                     ->label('Balance')
                     ->getStateUsing(function (User $record) {
-                        return 'RM ' . number_format($record->balance(), 2); // Format with "RM"
+                        return \Number::currency($record->balance()); // Call your custom method here
                     })
                     ->sortable()
                     ->toggleable(),
+
                 
             
 

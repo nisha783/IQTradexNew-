@@ -54,7 +54,7 @@
                         <input type="text" name="whatsapp" class="form-control" id="whatsapp"
                             placeholder="Enter WhatsApp Number">
                         <small>WhatsApp number includes country code</small>
-                    </div>4
+                    </div>
                     <div class="col-12">
                         <label for="password" class="form-label">Enter
                             Password</label>
