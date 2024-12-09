@@ -52,10 +52,10 @@
                 <div class="col-12">
                     <label for="whatsapp" class="form-label">WhatsApp Number</label>
                     <input type="tel" name="whatsapp" class="form-control" id="whatsapp"
-                        placeholder="Enter WhatsApp Number" pattern="^\+\d{10,15}$" required
+                        placeholder="Enter WhatsApp Number"  required
                         aria-describedby="whatsappHelp">
                     <small id="whatsappHelp" class="form-text text-muted">
-                        Include the country code (e.g., +91).
+                        Include the country code.
                     </small>
                     <div class="invalid-feedback">
                         Please enter a valid WhatsApp number.
