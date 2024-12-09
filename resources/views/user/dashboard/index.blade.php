@@ -111,7 +111,7 @@
                                 </span>
                             </td>
                             <td class="fw-bold">
-                                {{ $transaction->sum ? '+' : '-' }}{{ Number::currency($transaction->amount) }}
+                                {{ $transaction->sum ? '+' : '-' }}{{ Number::currency($transaction->amount) ,'MYR','ms_MY' }}
                             </td>
                             <td>{{ $transaction->reference }}</td>
                             <td>{{ $transaction->created_at->diffForHumans() }}</td>
@@ -140,24 +140,24 @@
                 <div class="d-flex align-items-center justify-content-between text-center">
                     <div>
                         <h6 class="mb-1 font-weight-bold">
-                            {{ Number::currency(auth()->user()->investment()) }}
+                            {{ Number::currency(auth()->user()->investment() ,'MYR' ,'ms_MY') }}
                         </h6>
                         <p class="mb-0">Investment</p>
                     </div>
                     <div class="mb-1">
-                        <h6 class="mb-1 font-weight-bold">{{ Number::currency(auth()->user()->networkingCap()) }}</h6>
+                        <h6 class="mb-1 font-weight-bold">{{ Number::currency(auth()->user()->networkingCap() ,'MYR' ,'ms_MY') }}</h6>
                         <p class="mb-0">Total Cap</p>
                     </div>
                 </div>
                 <hr>
                 <div class="d-flex align-items-center justify-content-between text-center">
                     <div>
-                        <h6 class="mb-1 font-weight-bold">{{ Number::currency(auth()->user()->alreadyReceivedCap()) }}
+                        <h6 class="mb-1 font-weight-bold">{{ Number::currency(auth()->user()->alreadyReceivedCap() ,'MYR','ms_MY') }}
                         </h6>
                         <p class="mb-0">Total Earned</p>
                     </div>
                     <div>
-                        <h6 class="mb-1 font-weight-bold">{{ Number::currency(auth()->user()->remainingCap()) }}</h6>
+                        <h6 class="mb-1 font-weight-bold">{{ Number::currency(auth()->user()->remainingCap() ,'MYR' ,'ms_MY') }}</h6>
                         <p class="mb-0">Remaining Cap</p>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                                     <div class="widgets-icons rounded-circle mx-auto mb-3"><i
                                             class='bx bxs-group'></i>
                                     </div>
-                                    <h4 class="my-1">{{ Number::currency(auth()->user()->totalSalesOfDownline()) }}</h4>
+                                    <h4 class="my-1">{{ Number::currency(auth()->user()->totalSalesOfDownline() ,'MYR' ,'ms_MY') }}</h4>
                                     <p class="mb-0">Total Sales</p>
                                 </div>
                             </div>
@@ -285,7 +285,7 @@
                                 </span>
                             </td>
                             <td class="fw-bold">
-                                {{ $deposit->sum ? '+' : '-' }}{{ Number::currency($deposit->amount) }}
+                                {{ $deposit->sum ? '+' : '-' }}{{ Number::currency($deposit->amount,'MYR','ms_MY') }}
                             </td>
                             <td>{{ $deposit->created_at->diffForHumans() }}</td>
                         </tr>
@@ -326,7 +326,7 @@
                                 </span>
                             </td>
                             <td class="fw-bold">
-                                {{ $deposit->sum ? '+' : '-' }}{{ Number::currency($deposit->amount) }}
+                                {{ $deposit->sum ? '+' : '-' }}{{ Number::currency($deposit->amount ,'MYR' ,'ms_MY') }}
                             </td>
                             <td>{{ $deposit->created_at->diffForHumans() }}</td>
                         </tr>
