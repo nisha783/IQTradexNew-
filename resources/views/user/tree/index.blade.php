@@ -206,7 +206,7 @@
                                             <span class="text-white fs-5">{{ auth()->user()->username }}</span>
                                             <br>
                                             <span
-                                                class="text-white fs-5">{{ Number::currency(auth()->user()->investment()) }}</span>
+                                                class="text-white fs-5">{{ Number::currency(auth()->user()->investment(),'MYR','ms_MY') }}</span>
                                         </div>
                                         <div class="member-image w-100 text-center">
                                             <img src="{{ auth()->user()->avatar ? Storage::url(auth()->user()->avatar) : asset('assets/images/avatar.png') }}"
