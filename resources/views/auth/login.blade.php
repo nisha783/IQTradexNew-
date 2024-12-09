@@ -12,11 +12,18 @@
                 <form class="row g-3" action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="col-12">
-                        <label for="whatsapp" class="form-label">WhatsApp Number</label>
-                        <input type="text" name="whatsapp" class="form-control" id="whatsapp"
-                            placeholder="Enter WhatsApp Number">
-                        <small>WhatsApp number includes country code</small>
-                    </div>
+    <label for="whatsapp" class="form-label">WhatsApp Number</label>
+    <input type="tel" name="whatsapp" class="form-control" id="whatsapp" 
+        placeholder="Enter WhatsApp Number" pattern="^\+\d{10,15}$" required
+        aria-describedby="whatsappHelp">
+    <small id="whatsappHelp" class="form-text text-muted">
+        Include the country code (e.g., +91).
+    </small>
+    <div class="invalid-feedback">
+        Please enter a valid WhatsApp number.
+    </div>
+</div>
+
                     <div class="col-12">
                         <label for="inputChoosePassword" class="form-label">Enter
                             Password</label>
