@@ -21,7 +21,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 
-<body class="bg-theme bg-theme2">
+<body class="bg-theme bg-theme10">
     <!--wrapper-->
     <div class="wrapper">
         <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">

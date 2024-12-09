@@ -89,14 +89,17 @@ class UserResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                // Custom column for user balance
-                Tables\Columns\TextColumn::make('balance')
+
+                    ///
+                    Tables\Columns\TextColumn::make('balance')
                     ->label('Balance')
                     ->getStateUsing(function (User $record) {
-                        return \Number::currency($record->balance()); // Call your custom method here
+                        return 'RM ' . number_format($record->balance(), 2); // Format with "RM"
                     })
                     ->sortable()
                     ->toggleable(),
+                
+            
 
                 Tables\Columns\TextColumn::make('investment')
                     ->label('Investment')
