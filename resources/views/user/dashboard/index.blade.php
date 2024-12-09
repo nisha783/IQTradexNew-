@@ -60,7 +60,12 @@
         'value' => auth()->user()->totalCommission(),
         ])
     </div>
-
+    <div class="col">
+        @include('inc.info-card', [
+        'title' => 'KYC Reward',
+        'value' => auth()->user()->transactions()->where('type', 'kyc bonus')->sum('amount'),
+        ])
+    </div>
     <div class="col">
         @include('inc.info-card', [
         'title' => 'Total Investment',
@@ -159,7 +164,7 @@
             </div>
         </div>
     </div>
-
+  
     <div class="col-md-12">
         <div class="card shadow-sm">
             <div class="card-body text-center">
@@ -280,9 +285,8 @@
                                 </span>
                             </td>
                             <td class="fw-bold">
-                                {{ $deposit->sum ? '+' : '-' }}RM{{ number_format($deposit->amount, 2) }}
+                                {{ $deposit->sum ? '+' : '-' }}{{ Number::currency($deposit->amount) }}
                             </td>
-
                             <td>{{ $deposit->created_at->diffForHumans() }}</td>
                         </tr>
                         @endforeach

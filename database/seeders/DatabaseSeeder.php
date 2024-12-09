@@ -216,7 +216,7 @@ class DatabaseSeeder extends Seeder
             'earning_cap' => 5000,
         ]);
         $plan = Plan::firstOrCreate([
-            'name' => 'Superior',
+            'name' => 'high Roller',
             'price' => 15000,
             'profit' => 405,
             'total days' => 100,

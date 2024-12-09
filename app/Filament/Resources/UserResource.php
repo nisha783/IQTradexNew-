@@ -99,9 +99,6 @@ class UserResource extends Resource
                     ->sortable()
                     ->toggleable(),
 
-                
-            
-
                 Tables\Columns\TextColumn::make('investment')
                     ->label('Investment')
                     ->getStateUsing(function (User $record) {
