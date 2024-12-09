@@ -27,7 +27,7 @@
     <div class="col">
         @include('inc.info-card', [
         'title' => 'Available Balance',
-        'value' => auth()->user()->balance(),
+        'value' => auth()->user()->balance(),'MYR' ,'ms_MY',
         ])
     </div>
     <div class="col">
@@ -60,12 +60,7 @@
         'value' => auth()->user()->totalCommission(),
         ])
     </div>
-    <div class="col">
-        @include('inc.info-card', [
-        'title' => 'KYC Reward',
-        'value' => auth()->user()->transactions()->where('type', 'kyc bonus')->sum('amount'),
-        ])
-    </div>
+   
     <div class="col">
         @include('inc.info-card', [
         'title' => 'Total Investment',

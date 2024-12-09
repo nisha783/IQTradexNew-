@@ -10,7 +10,6 @@ use App\Http\Controllers\NetworkCommissionController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\DepositController;
-use App\Http\Controllers\User\KycController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\TreeController;
 use App\Http\Controllers\User\WithdrawController;
@@ -30,7 +29,6 @@ Route::prefix('user')->name('user.')->middleware('auth', 'verified')->group(func
     Route::resource('plans', PlanController::class);
     Route::resource('withdraw', WithdrawController::class);
     Route::resource('transfer', FundTransferController::class);
-    Route::resource('kyc', KycController::class);
     Route::resource('profile', ProfileController::class);
     Route::resource('tree', TreeController::class);
     Route::resource('network', NetworkCommissionController::class);
