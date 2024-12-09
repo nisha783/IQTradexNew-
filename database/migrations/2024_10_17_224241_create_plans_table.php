@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->double('price');
             $table->string('profit');
+            $table->string('total days');
             $table->string('total_return');
             $table->string('earning_cap');
             $table->boolean('status')->default(true);

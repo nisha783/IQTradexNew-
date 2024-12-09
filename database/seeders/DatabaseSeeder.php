@@ -144,6 +144,94 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('asdfasdf'),
         ]);
 
+        $plan = Plan::firstOrCreate([
+            'name' => 'Interns',
+            'price' => 250,
+            'profit' => 4.16,
+            'Total days'=>120,
+            'total_return' => 500,
+            'earning_cap' => 25,
+        ]);
+
+        $plan = Plan::firstOrCreate([
+            'name' => 'Elite',
+            'price' => 600,
+            'profit' => 10.5,
+            'Total days' => 120,
+            'total_return' => 1260,
+            'earning_cap' => 50,
+        ]);
+
+        $plan = Plan::firstOrCreate([
+            'name' => 'Master',
+            'price' =>1000,
+            'profit' => 18.37,
+            'total days' => 120,
+            'total_return' => 2150,
+            'earning_cap' => 100,
+        ]);
+
+        $plan = Plan::firstOrCreate([
+            'name' => 'Top Tier',
+            'price' =>1500,
+            'profit' => 28.69,
+            'Total days' => 115,
+            'total_return' => 3300,
+            'earning_cap' => 250,
+        ]);
+
+        $plan = Plan::firstOrCreate([
+            'name' => 'Premium',
+            'price' =>2500,
+            'profit' => 51.13,
+            'total days' => 110,
+            'total_return' => 5625,
+            'earning_cap' => 500,
+        ]);
+
+        $plan = Plan::firstOrCreate([
+            'name' => 'Executive',
+            'price' => 3500,
+            'profit' => 76.15,
+            'total days' => 108,
+            'total_return' => 8225,
+            'earning_cap' => 1000,
+        ]);
+
+        $plan = Plan::firstOrCreate([
+            'name' => 'high Roller',
+            'price' => 5000,
+            'profit' => 118,
+            'total days' => 105,
+            'total_return' =>12400,
+            'earning_cap' => 2500,
+        ]);
+
+        $plan = Plan::firstOrCreate([
+            'name' => 'Superior',
+            'price' => 10000,
+            'profit' =>252.42,
+            'total days' =>103,
+            'total_return' => 26000,
+            'earning_cap' => 5000,
+        ]);
+        $plan = Plan::firstOrCreate([
+            'name' => 'Superior',
+            'price' => 15000,
+            'profit' => 405,
+            'total days' => 100,
+            'total_return' => 40500,
+            'earning_cap' => 5000,
+        ]);
+        $plan = Plan::firstOrCreate([
+            'name' => 'Superior',
+            'price' => 25000,
+            'profit' => 833.33,
+            'total days' => 90,
+            'total_return' => 75000,
+            'earning_cap' => 5000,
+        ]);
+
         $transaction = Transaction::firstOrCreate([
             'user_id' => $user->id,
             'amount' => 1000,
@@ -152,71 +240,6 @@ class DatabaseSeeder extends Seeder
             'sum' => true,
             'reference' => "CoinPayments Deposit",
         ]);
-
-        $plan = Plan::firstOrCreate([
-            'name' => 'Interns',
-            'price' => 50,
-            'profit' => 0.2,
-            'total_return' => 2,
-            'earning_cap' => 25,
-        ]);
-
-        $plan = Plan::firstOrCreate([
-            'name' => 'Elite',
-            'price' => 100,
-            'profit' => 0.5,
-            'total_return' => 3,
-            'earning_cap' => 50,
-        ]);
-
-        $plan = Plan::firstOrCreate([
-            'name' => 'Master',
-            'price' => 200,
-            'profit' => 0.6,
-            'total_return' => 3,
-            'earning_cap' => 100,
-        ]);
-
-        $plan = Plan::firstOrCreate([
-            'name' => 'Top Tier',
-            'price' => 500,
-            'profit' => 0.7,
-            'total_return' => 3,
-            'earning_cap' => 250,
-        ]);
-
-        $plan = Plan::firstOrCreate([
-            'name' => 'Premium',
-            'price' => 1000,
-            'profit' => 0.8,
-            'total_return' => 3.5,
-            'earning_cap' => 500,
-        ]);
-
-        $plan = Plan::firstOrCreate([
-            'name' => 'Executive',
-            'price' => 2000,
-            'profit' => 0.8,
-            'total_return' => 4,
-            'earning_cap' => 1000,
-        ]);
-
-        $plan = Plan::firstOrCreate([
-            'name' => 'high Roller',
-            'price' => 5000,
-            'profit' => 1,
-            'total_return' => 4.5,
-            'earning_cap' => 2500,
-        ]);
-
-        $plan = Plan::firstOrCreate([
-            'name' => 'Superior',
-            'price' => 10000,
-            'profit' => 1.2,
-            'total_return' => 5,
-            'earning_cap' => 5000,
-        ]);
-
         $setting = SiteSetting::create([
             'key' => 'deposit_active',
             'value' => true,

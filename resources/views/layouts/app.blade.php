@@ -27,7 +27,7 @@
     @yield('css')
 </head>
 
-<body class="bg-theme bg-theme9">
+<body class="bg-theme bg-theme10">
     <!--wrapper-->
     <div class="wrapper">
         <!--sidebar wrapper -->
@@ -138,13 +138,6 @@
                         <div class="parent-icon"><i class='bx bx-user'></i>
                         </div>
                         <div class="menu-title">My Account</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('user.kyc.index') }}">
-                        <div class="parent-icon"><i class='bx bx-shield'></i>
-                        </div>
-                        <div class="menu-title">Account KYC</div>
                     </a>
                 </li>
             </ul>

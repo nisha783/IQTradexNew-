@@ -38,7 +38,7 @@ class SendDailyProfitJob implements ShouldQueue
 
         info('Sending daily profit to ' . $this->userPlan->user->name);
 
-        $profit = $this->userPlan->plan->price * $this->userPlan->plan->profit / 100;
+        $profit = $this->userPlan->plan->profit;
         // checking if this user cap is full
         if ($this->userPlan->user->remainingCap() < $profit) {
             info('Cap is full. Not sending daily profit to ' . $this->userPlan->user->name);

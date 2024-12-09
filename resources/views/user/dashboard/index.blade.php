@@ -173,35 +173,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="card radius-10 w-100 overflow-hidden">
-            <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <div>
-                        <h5 class="mb-0">Daily Network Cap</h5>
-                    </div>
-                </div>
-                <div class="mt-5" id="dailyRoiChart" data-cap-invest="1000"
-                    data-cap-total="{{ auth()->user()->todayNetworkingCap() }}"
-                    data-cap-recieved="{{ auth()->user()->todayAlreadyReceivedCap() }}"></div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-                <div class="d-flex align-items-center justify-content-between text-center">
-                    <div>
-                        <h6 class="mb-1 font-weight-bold">
-                            {{ Number::currency(auth()->user()->todayAlreadyReceivedCap()) }}
-                        </h6>
-                        <p class="mb-0">Already Earned</p>
-                    </div>
-                    <div class="mb-1">
-                        <h6 class="mb-1 font-weight-bold">{{ Number::currency(auth()->user()->todayRemainingCap()) }}
-                        </h6>
-                        <p class="mb-0">Today Remaining</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  
     <div class="col-md-12">
         <div class="card shadow-sm">
             <div class="card-body text-center">

@@ -44,10 +44,16 @@
                         </select>
                     </div>
                     <div class="col-6">
-                        <label for="country" class="form-label">Mobile Number</label>
+                        <label for="phone" class="form-label">Mobile Number</label>
                         <input type="text" name="phone" class="form-control" id="phone"
                             placeholder="Enter Mobile Number">
                         <small>Mobile number includes country code</small>
+                    </div>
+                    <div class="col-12">
+                        <label for="whatsapp" class="form-label">WhatsApp Number</label>
+                        <input type="text" name="whatsapp" class="form-control" id="whatsapp"
+                            placeholder="Enter WhatsApp Number">
+                        <small>WhatsApp number includes country code</small>
                     </div>
                     <div class="col-12">
                         <label for="password" class="form-label">Enter

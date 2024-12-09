@@ -41,6 +41,7 @@ class RegisteredUserController extends Controller
             'referral' => ['nullable', 'string', 'exists:users,username'],
             'country' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:255'],
+            'whatsapp' => ['required', 'string', 'max:255'],
         ]);
 
         $referral = null;

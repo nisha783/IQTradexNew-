@@ -12,9 +12,10 @@
                 <form class="row g-3" action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="col-12">
-                        <label for="emailorusername" class="form-label">Email or Username</label>
-                        <input type="text" name="emailorusername" class="form-control" id="emailorusername"
-                            placeholder="Email or Username">
+                        <label for="whatsapp" class="form-label">WhatsApp Number</label>
+                        <input type="text" name="whatsapp" class="form-control" id="whatsapp"
+                            placeholder="Enter WhatsApp Number">
+                        <small>WhatsApp number includes country code</small>
                     </div>
                     <div class="col-12">
                         <label for="inputChoosePassword" class="form-label">Enter
