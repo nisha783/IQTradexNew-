@@ -3,7 +3,7 @@
         <div class="d-flex align-items-center">
             <div>
                 <p class="mb-0">{{ $title }}</p>
-                <h4 class="my-1">{{ Number::currency($value) }}</h4>
+                <h4 class="my-1">{{ Number::currency($value ,'MYR' ,'ms_MY') }}</h4>
             </div>
             <div class="widgets-icons ms-auto"><i class='bx bxs-{{ $icon ?? 'wallet' }}'></i>
             </div>

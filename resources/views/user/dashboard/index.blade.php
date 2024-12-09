@@ -27,7 +27,7 @@
     <div class="col">
         @include('inc.info-card', [
         'title' => 'Available Balance',
-        'value' => auth()->user()->balance(),'MYR' ,'ms_MY',
+        'value' => auth()->user()->balance(),
         ])
     </div>
     <div class="col">
