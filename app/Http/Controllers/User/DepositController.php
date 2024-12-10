@@ -38,31 +38,33 @@ class DepositController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'amount' => 'required|numeric|min:1',
+   public function store(Request $request)
+{
+    // Validate the request data
+    $request->validate([
+        'amount' => 'required|numeric|min:1',
+        'transaction_number' => 'required|string',
+        'screenshot' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Image validation
+    ]);
+
+        // Handle file upload
+        $screenshotPath = $request->file('screenshot')->store('screenshots', 'public'); // Store the screenshot file
+
+        // Save the deposit data in the `tid` model
+        $tid = \App\Models\tid::create([
+            'user_id' => auth()->user()->id, // Current logged-in user
+            'amount' => $request->amount,
+            'transaction_number' => $request->transaction_number, // Transaction ID entered by user
+            'status' => 'pending', // Default status when the deposit is created
+            'screenshot' => $screenshotPath, // Store the file path of the screenshot
         ]);
 
-        try {
-            $transaction = $this->coinPayments->createTransaction($request->amount, auth()->user()->email);
-            info('Transaction created in Controller: ' . json_encode($transaction));
+        // Redirect to a success page or a confirmation page
+        return back()->with('success','succesfuly');
+    
+  
+}
 
-            if (isset($transaction['amount'])) {
-                $transaction['user_id'] = auth()->user()->id;
-                // Store transaction details in database
-                $payment = Payment::create($transaction);
-
-                // Redirect to CoinPayments checkout page
-                return to_route('user.checkout.show', ['checkout' => $payment->txn_id]);
-            } else {
-                return back()->withErrors("Transaction creation failed");
-            }
-        } catch (\Exception $e) {
-            info('Transaction creation failed in Controller: ' . $e->getMessage());
-            return back()->withErrors($e->getMessage());
-        }
-    }
 
     public function webhook(Request $request)
     {

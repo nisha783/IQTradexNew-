@@ -24,6 +24,7 @@ Route::resource('/', LandingPageController::class);
 Route::post('/deposit/webhook', [DepositController::class, 'webhook'])->name('deposit.webhook');
 Route::prefix('user')->name('user.')->middleware('auth', 'verified')->group(function () {
     Route::resource('dashboard', DashboardController::class);
+    Route::get('deposite/request',[DepositController::class, 'request'])->name('deposite.request');
     Route::resource('deposit', DepositController::class);
     Route::resource('checkout', CheckoutController::class);
     Route::resource('plans', PlanController::class);

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id'); 
             $table->decimal('amount', 10, 2); 
-            $table->string('transaction_number')->unique(); 
+            $table->string('transaction_number'); 
             $table->enum('status', ['pending', 'approved'])->default('pending'); 
             $table->string('screenshot')->nullable();
             $table->timestamps();

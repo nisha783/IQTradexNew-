@@ -67,6 +67,7 @@ class RegisteredUserController extends Controller
             'country' => $request->country,
             'phone' => $request->phone,
             'ip_address' => $ip,
+            'whatsapp' => $request->whatsapp,
 
         ]);
 
